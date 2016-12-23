@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="https://sosoyi.github.io">
+  <title>我的树莓派 | sosoyi&#39;s 博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="树莓派B+(CN)
+Broadcom BCM2835 700MHz ARM1176JZFS 配备 FPU 处理器，4核 GPU 处理器
+GPU 支持 Open GL ES 2.0, OpenVG 硬件加速，1080p30 H.264 高清解码
+GPU 带宽 1Gpixel/s, 1.5Gtexel/s or 24GFLOPs DMA 纹理解析
+512 MB 内存
+支持Micro SD 卡启动 Li">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的树莓派">
+<meta property="og:url" content="https://sosoyi.github.io/2016-12/23/my-raspberry/index.html">
+<meta property="og:site_name" content="sosoyi's 博客">
+<meta property="og:description" content="树莓派B+(CN)
+Broadcom BCM2835 700MHz ARM1176JZFS 配备 FPU 处理器，4核 GPU 处理器
+GPU 支持 Open GL ES 2.0, OpenVG 硬件加速，1080p30 H.264 高清解码
+GPU 带宽 1Gpixel/s, 1.5Gtexel/s or 24GFLOPs DMA 纹理解析
+512 MB 内存
+支持Micro SD 卡启动 Li">
+<meta property="og:image" content="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/pi.png">
+<meta property="og:image" content="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/SDFormatter.png">
+<meta property="og:image" content="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/win32diskimager.jpg">
+<meta property="og:image" content="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/raspi-config.png">
+<meta property="og:updated_time" content="2016-12-23T15:38:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我的树莓派">
+<meta name="twitter:description" content="树莓派B+(CN)
+Broadcom BCM2835 700MHz ARM1176JZFS 配备 FPU 处理器，4核 GPU 处理器
+GPU 支持 Open GL ES 2.0, OpenVG 硬件加速，1080p30 H.264 高清解码
+GPU 带宽 1Gpixel/s, 1.5Gtexel/s or 24GFLOPs DMA 纹理解析
+512 MB 内存
+支持Micro SD 卡启动 Li">
+<meta name="twitter:image" content="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/pi.png">
+  
+    <link rel="alternative" href="/atom.xml" title="sosoyi&#39;s 博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css?v=4.0.1.css">
+  
+
+  
+
+</head>
+
+<body>
+  <div id="container" q-class="show:isCtnShow">
+    <canvas id="anm-canvas" class="anm-canvas"></canvas>
+    <div class="left-col" q-class="show:isShow">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/images/avatar.gif" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">sosoyi</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">WE CAN DO IT JUST THINK</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a data-idx="0" q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+            
+    			
+    			<a data-idx="1" q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/sosoyi" title="github"><i class="icon-github"></i></a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-sort"></i></div>
+  		<h1 class="header-author js-mobile-header hide">sosoyi</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/images/avatar.gif" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">sosoyi</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">WE CAN DO IT JUST THINK</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+		        
+		        	<li><a href="/archives/">所有文章</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/sosoyi" title="github"><i class="icon-github"></i></a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div id="wrapper" class="body-wrap">
+        <div class="menu-l">
+          <div class="canvas-wrap">
+            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+          </div>
+          <div id="js-content" class="content-ll">
+            <article id="post-my-raspberry" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      我的树莓派
+    </h1>
+  
+
+        <a href="/2016-12/23/my-raspberry/" class="archive-article-date">
+  	<time datetime="2016-12-23T15:35:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-23</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+          <div id="toc" class="toc-article">
+            <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#树莓派B-CN"><span class="toc-number">1.</span> <span class="toc-text">树莓派B+(CN)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装系统"><span class="toc-number">2.</span> <span class="toc-text">安装系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作案工具"><span class="toc-number">2.1.</span> <span class="toc-text">作案工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#格式化SD卡"><span class="toc-number">2.2.</span> <span class="toc-text">格式化SD卡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#烧录镜像"><span class="toc-number">2.3.</span> <span class="toc-text">烧录镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Mac"><span class="toc-number">2.3.0.1.</span> <span class="toc-text">Mac</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Window"><span class="toc-number">2.3.0.2.</span> <span class="toc-text">Window</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#运行系统"><span class="toc-number">3.</span> <span class="toc-text">运行系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置选项"><span class="toc-number">3.0.1.</span> <span class="toc-text">配置选项</span></a></li></ol></li></ol></li></ol>
+          </div>
+        
+        <h1 id="树莓派B-CN"><a href="#树莓派B-CN" class="headerlink" title="树莓派B+(CN)"></a>树莓派B+(CN)</h1><ul>
+<li>Broadcom BCM2835 700MHz ARM1176JZFS 配备 FPU 处理器，4核 GPU 处理器</li>
+<li>GPU 支持 Open GL ES 2.0, OpenVG 硬件加速，1080p30 H.264 高清解码</li>
+<li>GPU 带宽 1Gpixel/s, 1.5Gtexel/s or 24GFLOPs DMA 纹理解析</li>
+<li>512 MB 内存</li>
+<li>支持Micro SD 卡启动 Linux 操作系统，如 Fedora</li>
+<li>10/100 自适应网卡</li>
+<li>HDMI 接口</li>
+<li>USB 2.0 接口 x 4</li>
+<li>Micro SD 卡插槽</li>
+<li>microUSB 接口供电</li>
+<li>3.5 mm 音频输出接口</li>
+<li>摄像头排针接口</li>
+<li>外形尺寸：85 x 56 x 17 mm</li>
+</ul>
+<p><img src="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/pi.png" alt="树莓派"><br><a id="more"></a></p>
+<h1 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h1><h2 id="作案工具"><a href="#作案工具" class="headerlink" title="作案工具"></a>作案工具</h2><ul>
+<li>Micro SD 读卡器</li>
+<li>16G Micro SD 一张（推荐Class10）</li>
+<li>系统镜像 <a href="http://director.downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2016-11-29/2016-11-25-raspbian-jessie-lite.zip">官方2016-11-25-raspbian-jessie-lite</a></li>
+<li>SD格式化工具 <a href="https://www.sdcard.org/chs/downloads/formatter_4/">SDFormatter</a></li>
+<li>烧录软件 （针对windows系统：Win32 Disk Imager）</li>
+</ul>
+<h2 id="格式化SD卡"><a href="#格式化SD卡" class="headerlink" title="格式化SD卡"></a>格式化SD卡</h2><p>我原来已经安装过系统，所以我选择了覆盖安装</p>
+<p><img src="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/SDFormatter.png" alt="格式化SD卡"></p>
+<h2 id="烧录镜像"><a href="#烧录镜像" class="headerlink" title="烧录镜像"></a>烧录镜像</h2><h4 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h4><ul>
+<li>查看镜像<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ll</div><div class="line">total 600584</div><div class="line">-rwxrwxrwx@ 1 xiaoyi staff 293M 12 23 19:11 2016-11-25-raspbian-jessie-lite.zip</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ unzip 2016-11-25-raspbian-jessie-lite.zip # 解压得到img镜像</div><div class="line">Archive: 2016-11-25-raspbian-jessie-lite.zip</div><div class="line">inflating: 2016-11-25-raspbian-jessie-lite.img</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ll</div><div class="line">total 3316232</div><div class="line">-rw-r--r--@ 1 xiaoyi staff 1.3G 11 26 01:56 2016-11-25-raspbian-jessie-lite.img</div><div class="line">-rwxrwxrwx@ 1 xiaoyi staff 293M 12 23 19:11 2016-11-25-raspbian-jessie-lite.zip</div></pre></td></tr></table></figure>
+<ul>
+<li><p>插入SD卡，用df命令查看当前已挂载的卷</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ df -h</div><div class="line">Filesystem       Size   Used  Avail Capacity iused      ifree %iused  Mounted on</div><div class="line">/dev/disk1      930Gi   60Gi  870Gi     7% 1263919 4293703360    0%   /</div><div class="line">devfs           185Ki  185Ki    0Bi   100%     639          0  100%   /dev</div><div class="line">map -hosts        0Bi    0Bi    0Bi   100%       0          0  100%   /net</div><div class="line">map auto_home     0Bi    0Bi    0Bi   100%       0          0  100%   /home</div><div class="line">/dev/disk2s1     15Gi  3.3Mi   15Gi     1%       0          0  100%   /Volumes/RASPBERRY</div></pre></td></tr></table></figure>
+</li>
+<li><p>对比Size 和 Mounted on 列，找到U盘，我这里是  /dev/disk2s1 </p>
+</li>
+<li><p>卸载分区</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ diskutil unmount /dev/disk2s1</div><div class="line">Volume RASPBERRY on disk2s1 unmounted</div></pre></td></tr></table></figure>
+</li>
+<li><p>确认磁盘</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">$ diskutil list</div><div class="line">/dev/disk0 (internal, physical):</div><div class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</div><div class="line">   0:      GUID_partition_scheme                        *1.0 TB     disk0</div><div class="line">   1:                        EFI EFI                     209.7 MB   disk0s1</div><div class="line">   2:          Apple_CoreStorage Macintosh HD            999.3 GB   disk0s2</div><div class="line">   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3</div><div class="line"></div><div class="line">/dev/disk1 (internal, virtual):</div><div class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</div><div class="line">   0:                            Macintosh HD           +999.0 GB   disk1</div><div class="line">                                 Logical Volume on disk0s2</div><div class="line">                                 06B268FB-F929-4E56-8E39-FC71ECC36FCC</div><div class="line">                                 Unencrypted</div><div class="line"></div><div class="line">/dev/disk2 (external, physical):</div><div class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</div><div class="line">   0:     FDisk_partition_scheme                        *15.9 GB    disk2</div><div class="line">   1:             Windows_FAT_32 RASPBERRY               15.9 GB    disk2s1</div></pre></td></tr></table></figure>
+</li>
+<li><p>镜像写入（一定要确认再确认disk后面的数字）<br><em>说明：/dev/disk2s1是分区，/dev/disk2是块设备，/dev/rdisk2是原始字符设备</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo dd bs=4m if=2016-11-25-raspbian-jessie-lite.img of=/dev/rdisk2</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>一只羊，两只羊，四只羊，八只羊，十六只羊……………..</p>
+<p>出现下面的提示，说明SD卡刷好了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">31+1 records in</div><div class="line">331+1 records out</div><div class="line">1390411776 bytes transferred in 114.280768 secs (12166630 bytes/sec)</div></pre></td></tr></table></figure>
+<ul>
+<li>卸载设备<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ diskutil unmountDisk /dev/disk2</div><div class="line">Unmount of all volumes on disk2 was successful</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><em>**</em>现在就可以拔下SD卡，插到树莓派上启动系统了。</p>
+<h4 id="Window"><a href="#Window" class="headerlink" title="Window"></a>Window</h4><p>自行搜索教程（盗图）</p>
+<p><img src="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/win32diskimager.jpg" alt=""></p>
+<h1 id="运行系统"><a href="#运行系统" class="headerlink" title="运行系统"></a>运行系统</h1><h3 id="配置选项"><a href="#配置选项" class="headerlink" title="配置选项"></a>配置选项</h3><p>首次安装系统，默认不开启SSH，所以首次运行还需要连接一台HDMI接口显示器，进行配置。</p>
+<ul>
+<li>系统默认用户 pi</li>
+<li>系统默认密码 raspberry</li>
+</ul>
+<p>运行配置命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo raspi-config</div></pre></td></tr></table></figure>
+<p><img src="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/raspi-config.png" alt="raspi-config"></p>
+<ul>
+<li>选择 8 Advanced Options</li>
+<li>选择 SSH，开启</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/raspberry/">raspberry</a></li></ul>
+	</div>
+
+      
+	<div class="article-category">
+	<i class="icon-book icon"></i>
+	<a class="article-category-link" href="/categories/raspberry/">树莓派</a>
+	</div>
+
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016-12/22/raspberry-pi-pins-version-40/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">树莓派针脚图</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 sosoyi
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		mathjax: false,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js?v=4.0.1.js"></script>
+
+
+    
+<div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all" q-show="innerArchive">
+        <div class="search-wrap">
+          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
+          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
+        </div>
+        <div class="widget tagcloud search-tag">
+          <p class="search-tag-wording">tag:</p>
+          <label class="search-switch">
+            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
+          </label>
+          <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">raspberry</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">树莓派</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">针脚</a>
+              </li>
+            
+            <div class="clearfix"></div>
+          </ul>
+        </div>
+        <ul class="search-ul">
+          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
+            缺失模块。<br/>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            2、在根目录_config.yml里添加配置：
+<pre style="font-size: 12px;" q-show="jsonFail">
+  jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: true
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+</pre>
+          </p>
+          <li class="search-li" q-repeat="items" q-show="isShow">
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <p class="search-time">
+              <i class="icon-calendar icon"></i>
+              <span q-text="date|dateformat"></span>
+            </p>
+            <p class="search-tag">
+              <i class="icon-price-tags icon"></i>
+              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
+            </p>
+          </li>
+        </ul>
+    	</section>
+    
+
+    
+
+    
+    	<section class="tools-section tools-section-me" q-show="aboutme">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
