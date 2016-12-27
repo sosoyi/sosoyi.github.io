@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="https://sosoyi.github.io">
+  <title>树莓派连接红外接收模块 | sosoyi&#39;s 博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="文中图片来自于我购买硬件的商铺，没有广告
+插拔硬件请断电
+
+目标
+给树莓派给安装个红外接收管
+录制遥控信息
+
+准备
+树莓派
+红外接收模块
+杜邦线
+遥控器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树莓派连接红外接收模块">
+<meta property="og:url" content="https://sosoyi.github.io/2016-12/24/infraed-receiving-module-hx1888/index.html">
+<meta property="og:site_name" content="sosoyi's 博客">
+<meta property="og:description" content="文中图片来自于我购买硬件的商铺，没有广告
+插拔硬件请断电
+
+目标
+给树莓派给安装个红外接收管
+录制遥控信息
+
+准备
+树莓派
+红外接收模块
+杜邦线
+遥控器">
+<meta property="og:image" content="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/hx1888.jpg">
+<meta property="og:image" content="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/infrared-remote-control.jpg">
+<meta property="og:updated_time" content="2016-12-27T08:49:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="树莓派连接红外接收模块">
+<meta name="twitter:description" content="文中图片来自于我购买硬件的商铺，没有广告
+插拔硬件请断电
+
+目标
+给树莓派给安装个红外接收管
+录制遥控信息
+
+准备
+树莓派
+红外接收模块
+杜邦线
+遥控器">
+<meta name="twitter:image" content="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/hx1888.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="sosoyi&#39;s 博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css?v=4.0.1.css">
+  
+
+  
+
+</head>
+
+<body>
+  <div id="container" q-class="show:isCtnShow">
+    <canvas id="anm-canvas" class="anm-canvas"></canvas>
+    <div class="left-col" q-class="show:isShow">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/images/avatar.gif" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">sosoyi</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">WE CAN DO IT JUST THINK</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a data-idx="0" q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+            
+    			
+    			<a data-idx="1" q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/sosoyi" title="github"><i class="icon-github"></i></a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-sort"></i></div>
+  		<h1 class="header-author js-mobile-header hide">sosoyi</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/images/avatar.gif" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">sosoyi</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">WE CAN DO IT JUST THINK</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+		        
+		        	<li><a href="/archives/">所有文章</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/sosoyi" title="github"><i class="icon-github"></i></a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div id="wrapper" class="body-wrap">
+        <div class="menu-l">
+          <div class="canvas-wrap">
+            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+          </div>
+          <div id="js-content" class="content-ll">
+            <article id="post-infraed-receiving-module-hx1888" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      树莓派连接红外接收模块
+    </h1>
+  
+
+        <a href="/2016-12/24/infraed-receiving-module-hx1888/" class="archive-article-date">
+  	<time datetime="2016-12-24T07:05:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-24</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <blockquote>
+<p>文中图片来自于我购买硬件的商铺，没有广告</p>
+<p>插拔硬件请断电</p>
+</blockquote>
+<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><ol>
+<li>给树莓派给安装个红外接收管</li>
+<li>录制遥控信息</li>
+</ol>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><ul>
+<li>树莓派</li>
+<li>红外接收模块</li>
+<li>杜邦线</li>
+<li>遥控器</li>
+</ul>
+<a id="more"></a>
+<h3 id="硬件说明"><a href="#硬件说明" class="headerlink" title="硬件说明"></a>硬件说明</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>说明</th>
+<th>图片</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>红外接收模块</td>
+<td>1. 传感器采用HX1838，灵敏度高<br>2. 工作电压5V<br>3. 输出形式:数字量输出<br>4. 设有固定螺栓孔，方便安装<br>5. 小板PCB尺寸：1.9cm * 1.4cm<br>6. 电源指示灯（红色）</td>
+<td>1. VCC 外接5V<br>2. GND 外接GND<br>3. DO 小板数字量输出接口</td>
+<td><img src="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/hx1888.jpg" alt="红外接收模块"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>说明</th>
+<th>图片</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>遥控器</td>
+<td>1. 遥控范围：8-10米（红外接收头本身质量,中间有无障碍物等因素会影响到遥控距离）<br>2. 电池：3V扣式锂锰电池<br>3. 红外载波频率：38KHz<br>4. 电源指示灯（红色）</td>
+<td><img src="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/infrared-remote-control.jpg" alt="遥控器"></td>
+</tr>
+</tbody>
+</table>
+<h1 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h1><h2 id="1-硬件连接"><a href="#1-硬件连接" class="headerlink" title="1. 硬件连接"></a>1. 硬件连接</h2><blockquote>
+<p>树莓派针脚请查看 <a href="/2016-12/22/raspberry-pi-pins-version-40">树莓派针脚图</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">红外模块</th>
+<th style="text-align:center"></th>
+<th style="text-align:left">树莓派</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">VCC</td>
+<td style="text-align:center">&lt;===&gt;</td>
+<td style="text-align:left">GPIO针脚 pin2 (VCC)</td>
+</tr>
+<tr>
+<td style="text-align:right">GND</td>
+<td style="text-align:center">&lt;===&gt;</td>
+<td style="text-align:left">GPIO针脚 pin6（GND）</td>
+</tr>
+<tr>
+<td style="text-align:right">OUT</td>
+<td style="text-align:center">&lt;===&gt;</td>
+<td style="text-align:left">GPIO针脚 pin12 (管脚18，默认)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-软件"><a href="#2-软件" class="headerlink" title="2. 软件"></a>2. 软件</h2><h3 id="树莓派配置lirc"><a href="#树莓派配置lirc" class="headerlink" title="树莓派配置lirc"></a>树莓派配置lirc</h3><h5 id="安装lirc"><a href="#安装lirc" class="headerlink" title="安装lirc"></a>安装lirc</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pi@raspberrypi:~/smartHome $ git clone git://git.code.sf.net/p/lirc/git repository/lirc</div><div class="line">pi@raspberrypi:~/smartHome $ cd</div></pre></td></tr></table></figure>
+<h5 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h5><blockquote>
+<p>在 <code>/boot/config.txt</code> 文件后面添加下面这一句，这一句就是树莓派添加Device Tree设备</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ sudo vim /boot/config.txt</div><div class="line"># 修改或者添加下面代码</div><div class="line"># 默认输入针脚为18，可以省略</div><div class="line">dtoverlay=lirc-rpi,gpio_in_pin=18</div></pre></td></tr></table></figure>
+<blockquote>
+<p><code>/boot/overlays/README</code> 文件中我们可以找到详细说明</p>
+</blockquote>
+<h5 id="编辑-LRIC-的配置文件使能红外线功能"><a href="#编辑-LRIC-的配置文件使能红外线功能" class="headerlink" title="编辑 LRIC 的配置文件使能红外线功能"></a>编辑 LRIC 的配置文件使能红外线功能</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pi@raspberrypi:~/smartHome $ sudo vim /etc/lirc/hardware.conf</div></pre></td></tr></table></figure>
+<h6 id="修改-etc-modules"><a href="#修改-etc-modules" class="headerlink" title="修改 /etc/modules"></a>修改 <code>/etc/modules</code></h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">lirc_dev</div><div class="line">lirc_rpi gpio_in_pin=18 gpio_out_pin=17</div></pre></td></tr></table></figure>
+<h5 id="加载驱动"><a href="#加载驱动" class="headerlink" title="加载驱动"></a>加载驱动</h5><blockquote>
+<p>运行 <code>lsmod</code> 命令查看设备是否已启动</p>
+<p>执行 <code>sudo modprobe lirc_rpi</code>， 默认会加上 (输入)gpio_in_pin=18 (输出)gpio_out_pin=17</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pi@raspberrypi:~/smartHome $ sudo modprobe lirc_rpi</div></pre></td></tr></table></figure>
+<blockquote>
+<p>根据自己需要自定义可以修改, 跳线也需要连接相应的针脚<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pi@raspberrypi:~/smartHome $ sudo modprobe lirc_rpi gpio_in_pin=23 gpio_out_pin=24</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h5 id="运行测试脉冲"><a href="#运行测试脉冲" class="headerlink" title="运行测试脉冲"></a>运行测试脉冲</h5><blockquote>
+<p>每按一次按键都应该会显示一组’pulse’ / ‘space’信息</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pi@raspberrypi:~/smartHome $ sudo mode2 -d /dev/lirc0</div></pre></td></tr></table></figure>
+<h6 id="按遥控上任何键，查看是否接收到类似脉冲"><a href="#按遥控上任何键，查看是否接收到类似脉冲" class="headerlink" title="按遥控上任何键，查看是否接收到类似脉冲"></a>按遥控上任何键，查看是否接收到类似脉冲</h6><blockquote>
+<p>每按一次按键都应该会显示一组’pulse’ / ‘space’信息</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">pulse 5481743</div><div class="line">space 9126</div><div class="line">pulse 4485</div><div class="line">space 620</div><div class="line">pulse 509</div><div class="line">space 653</div></pre></td></tr></table></figure>
+<p>#</p>
+<h2 id="录制按键"><a href="#录制按键" class="headerlink" title="录制按键"></a>录制按键</h2><h6 id="查看可以使用的key列表，随后输入key必须在这列表里"><a href="#查看可以使用的key列表，随后输入key必须在这列表里" class="headerlink" title="查看可以使用的key列表，随后输入key必须在这列表里"></a>查看可以使用的key列表，随后输入key必须在这列表里</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pi@raspberrypi:~/smartHome $ irrecord --list-namespace</div></pre></td></tr></table></figure>
+<h5 id="编辑-LRIC-的配置文件"><a href="#编辑-LRIC-的配置文件" class="headerlink" title="编辑 LRIC 的配置文件"></a>编辑 LRIC 的配置文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pi@raspberrypi:~/smartHome $ sudo vim /etc/lirc/hardware.conf</div></pre></td></tr></table></figure>
+<h6 id="录制前需要关闭lirc"><a href="#录制前需要关闭lirc" class="headerlink" title="录制前需要关闭lirc"></a>录制前需要关闭lirc</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pi@raspberrypi:~/smartHome $ sudo /etc/init.d/lirc stop</div></pre></td></tr></table></figure>
+<p>####### 开始录制，开始后需要随便按键通过2*80的调试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pi@raspberrypi:~/smartHome $ irrecord -n -d /dev/lirc0 lircd.conf</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>当调试完成后，会出现以下提示，这时候我们要录制按键。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">Press RETURN now to start recording.</div><div class="line">................................................................................</div><div class="line">Found const length: 108416</div><div class="line">Please keep on pressing buttons like described above.</div><div class="line">................................................................................</div><div class="line">Space/pulse encoded remote control found.</div><div class="line">Signal length is 67.</div><div class="line">Found possible header: 9104 4473</div><div class="line">Found trail pulse: 626</div><div class="line">Found repeat code: 9106 2204</div><div class="line">Signals are space encoded.</div><div class="line">Signal length is 32</div><div class="line">Now enter the names for the buttons.</div><div class="line"></div><div class="line">Please enter the name for the next button (press &lt;ENTER&gt; to finish recording)</div></pre></td></tr></table></figure>
+<h6 id="录制按键-1"><a href="#录制按键-1" class="headerlink" title="录制按键"></a>录制按键</h6><blockquote>
+<p>输入key,回车，然后按遥控器对应按键，录制成功</p>
+</blockquote>
+<h6 id="复制-lircd-conf-到-etc-lirc-下"><a href="#复制-lircd-conf-到-etc-lirc-下" class="headerlink" title="复制 lircd.conf 到 /etc/lirc/ 下"></a>复制 <code>lircd.conf</code> 到 <code>/etc/lirc/</code> 下</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pi@raspberrypi:~/smartHome $ sudo cp lircd.conf /etc/lirc/lircd.conf</div></pre></td></tr></table></figure>
+<h5 id="重新载入配置"><a href="#重新载入配置" class="headerlink" title="重新载入配置:"></a>重新载入配置:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pi@raspberrypi:~/smartHome $ sudo /etc/init.d/lirc stop</div><div class="line">pi@raspberrypi:~/smartHome $ sudo /etc/init.d/lirc start</div></pre></td></tr></table></figure>
+<h5 id="运行调试"><a href="#运行调试" class="headerlink" title="运行调试"></a>运行调试</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pi@raspberrypi:~ $ sudo lircd --nodaemon --device /dev/lirc0 --driver default</div></pre></td></tr></table></figure>
+<h6 id="重新打开一个窗口"><a href="#重新打开一个窗口" class="headerlink" title="重新打开一个窗口"></a>重新打开一个窗口</h6><blockquote>
+<p>输入如下命令，调试窗口，会有连接信息</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pi@raspberrypi:~ $ irw</div></pre></td></tr></table></figure>
+<blockquote>
+<p>按遥控器按键会有如下输出</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">0000000000ffe01f 00 KEY_VOLUMEDOWN lircd.conf</div><div class="line">0000000000ffe01f 01 KEY_VOLUMEDOWN lircd.conf</div><div class="line">0000000000ffa857 00 KEY_VOLUMEUP lircd.conf</div><div class="line">0000000000ff18e7 00 KEY_NUMERIC_2 lircd.conf</div><div class="line">0000000000ff30cf 00 KEY_NUMERIC_1 lircd.conf</div></pre></td></tr></table></figure>
+<h5 id="修改-etc-lirc-hardware-conf"><a href="#修改-etc-lirc-hardware-conf" class="headerlink" title="修改 /etc/lirc/hardware.conf"></a>修改 <code>/etc/lirc/hardware.conf</code></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"># /etc/lirc/hardware.conf</div><div class="line">#</div><div class="line"># Arguments which will be used when launching lircd</div><div class="line">LIRCD_ARGS=&quot;&quot;</div><div class="line"></div><div class="line">#Don&apos;t start lircmd even if there seems to be a good config file</div><div class="line">#START_LIRCMD=false</div><div class="line"></div><div class="line">#Don&apos;t start irexec, even if a good config file seems to exist.</div><div class="line">#START_IREXEC=false</div><div class="line"></div><div class="line">#Try to load appropriate kernel modules</div><div class="line">LOAD_MODULES=true</div><div class="line"># Run &quot;lircd --driver=help&quot; for a list of supported drivers.</div><div class="line">DRIVER=&quot;default&quot;</div><div class="line"># usually /dev/lirc0 is the correct setting for systems using udev</div><div class="line">DEVICE=&quot;/dev/lirc0&quot;</div><div class="line">MODULES=&quot;lirc_rpi&quot;</div><div class="line"># Default configuration files for your hardware if any</div><div class="line">LIRCD_CONF=&quot;&quot;</div><div class="line">LIRCMD_CONF=&quot;&quot;</div></pre></td></tr></table></figure>
+<h6 id="启动lircd"><a href="#启动lircd" class="headerlink" title="启动lircd"></a>启动lircd</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pi@raspberrypi:~ $ sudo lircd</div></pre></td></tr></table></figure>
+<h6 id="重启树莓派"><a href="#重启树莓派" class="headerlink" title="重启树莓派"></a>重启树莓派</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pi@raspberrypi:~ $ sudo reboot</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/raspberry/">raspberry</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/smartHome/">smartHome</a></li></ul>
+	</div>
+
+      
+	<div class="article-category">
+	<i class="icon-book icon"></i>
+	<a class="article-category-link" href="/categories/raspberry/">树莓派</a>
+	</div>
+
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016-12/26/change-apt-source/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          更改apt源
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016-12/23/my-raspberry/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的树莓派</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 sosoyi
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		mathjax: false,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js?v=4.0.1.js"></script>
+
+
+    
+<div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all" q-show="innerArchive">
+        <div class="search-wrap">
+          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
+          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
+        </div>
+        <div class="widget tagcloud search-tag">
+          <p class="search-tag-wording">tag:</p>
+          <label class="search-switch">
+            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
+          </label>
+          <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">raspberry</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">smartHome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">apt-get</a>
+              </li>
+            
+            <div class="clearfix"></div>
+          </ul>
+        </div>
+        <ul class="search-ul">
+          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
+            缺失模块。<br/>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            2、在根目录_config.yml里添加配置：
+<pre style="font-size: 12px;" q-show="jsonFail">
+  jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: true
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+</pre>
+          </p>
+          <li class="search-li" q-repeat="items" q-show="isShow">
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <p class="search-time">
+              <i class="icon-calendar icon"></i>
+              <span q-text="date|dateformat"></span>
+            </p>
+            <p class="search-tag">
+              <i class="icon-price-tags icon"></i>
+              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
+            </p>
+          </li>
+        </ul>
+    	</section>
+    
+
+    
+
+    
+    	<section class="tools-section tools-section-me" q-show="aboutme">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>

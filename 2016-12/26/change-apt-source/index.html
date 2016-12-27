@@ -6,17 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://sosoyi.github.io">
-  <title>Archives: 2016/12 | sosoyi&#39;s 博客</title>
+  <title>更改apt源 | sosoyi&#39;s 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一名老TPer,就爱鼓捣，还成功不了...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="sosoyi's 博客">
-<meta property="og:url" content="https://sosoyi.github.io/archives/2016/12/index.html">
+  <meta name="description" content="修改 apt-get 为 阿里源
+参考http://mirrors.aliyun.com/
+
+备份原始文件12$ sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak$ sudo mv /etc/apt/sources.list.d/raspi.list /etc/apt/sources.list.d/raspi.list.bak
+创建 /">
+<meta property="og:type" content="article">
+<meta property="og:title" content="更改apt源">
+<meta property="og:url" content="https://sosoyi.github.io/2016-12/26/change-apt-source/index.html">
 <meta property="og:site_name" content="sosoyi's 博客">
-<meta property="og:description" content="一名老TPer,就爱鼓捣，还成功不了...">
+<meta property="og:description" content="修改 apt-get 为 阿里源
+参考http://mirrors.aliyun.com/
+
+备份原始文件12$ sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak$ sudo mv /etc/apt/sources.list.d/raspi.list /etc/apt/sources.list.d/raspi.list.bak
+创建 /">
+<meta property="og:updated_time" content="2016-12-26T13:21:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sosoyi's 博客">
-<meta name="twitter:description" content="一名老TPer,就爱鼓捣，还成功不了...">
+<meta name="twitter:title" content="更改apt源">
+<meta name="twitter:description" content="修改 apt-get 为 阿里源
+参考http://mirrors.aliyun.com/
+
+备份原始文件12$ sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak$ sudo mv /etc/apt/sources.list.d/raspi.list /etc/apt/sources.list.d/raspi.list.bak
+创建 /">
   
     <link rel="alternative" href="/atom.xml" title="sosoyi&#39;s 博客" type="application/atom+xml">
   
@@ -127,207 +140,78 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-change-apt-source" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016-12/26/change-apt-source/" class="archive-article-date">
-  	<time datetime="2016-12-26T13:17:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-26</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016-12/26/change-apt-source/">更改apt源</a>
+    <h1 class="article-title" itemprop="name">
+      更改apt源
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        <a href="/2016-12/26/change-apt-source/" class="archive-article-date">
+  	<time datetime="2016-12-26T13:17:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-26</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h1 id="修改-apt-get-为-阿里源"><a href="#修改-apt-get-为-阿里源" class="headerlink" title="修改 apt-get 为 阿里源"></a>修改 apt-get 为 阿里源</h1><blockquote>
+<p>参考<a href="http://mirrors.aliyun.com/">http://mirrors.aliyun.com/</a></p>
+</blockquote>
+<h6 id="备份原始文件"><a href="#备份原始文件" class="headerlink" title="备份原始文件"></a>备份原始文件</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak</div><div class="line">$ sudo mv /etc/apt/sources.list.d/raspi.list /etc/apt/sources.list.d/raspi.list.bak</div></pre></td></tr></table></figure>
+<h6 id="创建-etc-apt-sources-list-文件"><a href="#创建-etc-apt-sources-list-文件" class="headerlink" title="创建 /etc/apt/sources.list 文件"></a>创建 <code>/etc/apt/sources.list</code> 文件</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo touch /etc/apt/sources.list</div><div class="line">$ sudo vim /etc/apt/sources.list</div></pre></td></tr></table></figure>
+<h6 id="编辑-etc-apt-sources-list-文件内容，保存退出"><a href="#编辑-etc-apt-sources-list-文件内容，保存退出" class="headerlink" title="编辑 /etc/apt/sources.list 文件内容，保存退出"></a>编辑 <code>/etc/apt/sources.list</code> 文件内容，保存退出</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">deb http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib rpi</div><div class="line">deb-src http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib rpi</div></pre></td></tr></table></figure>
+<h6 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get upgrade --fix-missing</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apt-get/">apt-get</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/raspberry/">raspberry</a></li></ul>
 	</div>
 
-          
+      
 	<div class="article-category">
 	<i class="icon-book icon"></i>
 	<a class="article-category-link" href="/categories/raspberry/">树莓派</a>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016-12/24/infraed-receiving-module-hx1888/" class="archive-article-date">
-  	<time datetime="2016-12-24T07:05:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016-12/24/infraed-receiving-module-hx1888/">树莓派连接红外接收模块</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/raspberry/">raspberry</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/smartHome/">smartHome</a></li></ul>
-	</div>
-
-          
-	<div class="article-category">
-	<i class="icon-book icon"></i>
-	<a class="article-category-link" href="/categories/raspberry/">树莓派</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016-12/23/my-raspberry/" class="archive-article-date">
-  	<time datetime="2016-12-23T15:35:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016-12/23/my-raspberry/">我的树莓派</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/raspberry/">raspberry</a></li></ul>
-	</div>
-
-          
-	<div class="article-category">
-	<i class="icon-book icon"></i>
-	<a class="article-category-link" href="/categories/raspberry/">树莓派</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016-12/22/raspberry-pi-pins-version-40/" class="archive-article-date">
-  	<time datetime="2016-12-22T06:48:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016-12/22/raspberry-pi-pins-version-40/">树莓派针脚图</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/raspberry/">raspberry</a></li></ul>
-	</div>
-
-          
-	<div class="article-category">
-	<i class="icon-book icon"></i>
-	<a class="article-category-link" href="/categories/raspberry/">树莓派</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016-12/20/hello-world/" class="archive-article-date">
-  	<time datetime="2016-12-20T06:48:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016-12/20/hello-world/">欢迎使用Hexo</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-	</div>
-
-          
-	<div class="article-category">
-	<i class="icon-book icon"></i>
-	<a class="article-category-link" href="/categories/hexo/">Hexo 使用攻略</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2016-12/24/infraed-receiving-module-hx1888/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">树莓派连接红外接收模块</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
+</nav>
 
-    
+
+
+
+
+
+
 
 
           </div>
@@ -350,8 +234,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

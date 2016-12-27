@@ -27,8 +27,9 @@ GPU 带宽 1Gpixel/s, 1.5Gtexel/s or 24GFLOPs DMA 纹理解析
 <meta property="og:image" content="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/pi.png">
 <meta property="og:image" content="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/SDFormatter.png">
 <meta property="og:image" content="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/win32diskimager.jpg">
-<meta property="og:image" content="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/raspi-config.png">
-<meta property="og:updated_time" content="2016-12-23T15:38:21.000Z">
+<meta property="og:image" content="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/raspi-config-1.png">
+<meta property="og:image" content="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/raspi-config-2.png">
+<meta property="og:updated_time" content="2016-12-24T07:22:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的树莓派">
 <meta name="twitter:description" content="树莓派B+(CN)
@@ -170,7 +171,7 @@ GPU 带宽 1Gpixel/s, 1.5Gtexel/s or 24GFLOPs DMA 纹理解析
         
           <div id="toc" class="toc-article">
             <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#树莓派B-CN"><span class="toc-number">1.</span> <span class="toc-text">树莓派B+(CN)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装系统"><span class="toc-number">2.</span> <span class="toc-text">安装系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作案工具"><span class="toc-number">2.1.</span> <span class="toc-text">作案工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#格式化SD卡"><span class="toc-number">2.2.</span> <span class="toc-text">格式化SD卡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#烧录镜像"><span class="toc-number">2.3.</span> <span class="toc-text">烧录镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Mac"><span class="toc-number">2.3.0.1.</span> <span class="toc-text">Mac</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Window"><span class="toc-number">2.3.0.2.</span> <span class="toc-text">Window</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#运行系统"><span class="toc-number">3.</span> <span class="toc-text">运行系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置选项"><span class="toc-number">3.0.1.</span> <span class="toc-text">配置选项</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#树莓派B-CN"><span class="toc-number">1.</span> <span class="toc-text">树莓派B+(CN)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装系统"><span class="toc-number">2.</span> <span class="toc-text">安装系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作案工具"><span class="toc-number">2.0.1.</span> <span class="toc-text">作案工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#格式化SD卡"><span class="toc-number">2.0.2.</span> <span class="toc-text">格式化SD卡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#烧录镜像"><span class="toc-number">2.0.3.</span> <span class="toc-text">烧录镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Mac"><span class="toc-number">2.0.3.1.</span> <span class="toc-text">Mac</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#查看镜像"><span class="toc-number">2.0.3.1.0.1.</span> <span class="toc-text">查看镜像</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#插入SD卡，用df命令查看当前已挂载的卷"><span class="toc-number">2.0.3.1.0.2.</span> <span class="toc-text">插入SD卡，用df命令查看当前已挂载的卷</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#卸载分区"><span class="toc-number">2.0.3.1.0.3.</span> <span class="toc-text">卸载分区</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#确认磁盘"><span class="toc-number">2.0.3.1.0.4.</span> <span class="toc-text">确认磁盘</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#镜像写入（一定要确认再确认disk后面的数字）"><span class="toc-number">2.0.3.1.0.5.</span> <span class="toc-text">镜像写入（一定要确认再确认disk后面的数字）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#卸载设备"><span class="toc-number">2.0.3.1.0.6.</span> <span class="toc-text">卸载设备</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Window"><span class="toc-number">2.0.3.2.</span> <span class="toc-text">Window</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#运行系统"><span class="toc-number">3.</span> <span class="toc-text">运行系统</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#运行配置命令"><span class="toc-number">3.0.0.0.0.1.</span> <span class="toc-text">运行配置命令</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
           </div>
         
         <h1 id="树莓派B-CN"><a href="#树莓派B-CN" class="headerlink" title="树莓派B+(CN)"></a>树莓派B+(CN)</h1><ul>
@@ -189,59 +190,59 @@ GPU 带宽 1Gpixel/s, 1.5Gtexel/s or 24GFLOPs DMA 纹理解析
 <li>外形尺寸：85 x 56 x 17 mm</li>
 </ul>
 <p><img src="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/pi.png" alt="树莓派"><br><a id="more"></a></p>
-<h1 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h1><h2 id="作案工具"><a href="#作案工具" class="headerlink" title="作案工具"></a>作案工具</h2><ul>
+<h1 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h1><h3 id="作案工具"><a href="#作案工具" class="headerlink" title="作案工具"></a>作案工具</h3><ul>
 <li>Micro SD 读卡器</li>
 <li>16G Micro SD 一张（推荐Class10）</li>
 <li>系统镜像 <a href="http://director.downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2016-11-29/2016-11-25-raspbian-jessie-lite.zip">官方2016-11-25-raspbian-jessie-lite</a></li>
 <li>SD格式化工具 <a href="https://www.sdcard.org/chs/downloads/formatter_4/">SDFormatter</a></li>
 <li>烧录软件 （针对windows系统：Win32 Disk Imager）</li>
 </ul>
-<h2 id="格式化SD卡"><a href="#格式化SD卡" class="headerlink" title="格式化SD卡"></a>格式化SD卡</h2><p>我原来已经安装过系统，所以我选择了覆盖安装</p>
+<h3 id="格式化SD卡"><a href="#格式化SD卡" class="headerlink" title="格式化SD卡"></a>格式化SD卡</h3><blockquote>
+<p>我原来已经安装过系统，所以我选择了覆盖安装</p>
+</blockquote>
 <p><img src="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/SDFormatter.png" alt="格式化SD卡"></p>
-<h2 id="烧录镜像"><a href="#烧录镜像" class="headerlink" title="烧录镜像"></a>烧录镜像</h2><h4 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h4><ul>
-<li>查看镜像<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ll</div><div class="line">total 600584</div><div class="line">-rwxrwxrwx@ 1 xiaoyi staff 293M 12 23 19:11 2016-11-25-raspbian-jessie-lite.zip</div></pre></td></tr></table></figure>
-</li>
-</ul>
+<h3 id="烧录镜像"><a href="#烧录镜像" class="headerlink" title="烧录镜像"></a>烧录镜像</h3><h4 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h4><h6 id="查看镜像"><a href="#查看镜像" class="headerlink" title="查看镜像"></a>查看镜像</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ll</div><div class="line">total 600584</div><div class="line">-rwxrwxrwx@ 1 xiaoyi staff 293M 12 23 19:11 2016-11-25-raspbian-jessie-lite.zip</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ unzip 2016-11-25-raspbian-jessie-lite.zip # 解压得到img镜像</div><div class="line">Archive: 2016-11-25-raspbian-jessie-lite.zip</div><div class="line">inflating: 2016-11-25-raspbian-jessie-lite.img</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ll</div><div class="line">total 3316232</div><div class="line">-rw-r--r--@ 1 xiaoyi staff 1.3G 11 26 01:56 2016-11-25-raspbian-jessie-lite.img</div><div class="line">-rwxrwxrwx@ 1 xiaoyi staff 293M 12 23 19:11 2016-11-25-raspbian-jessie-lite.zip</div></pre></td></tr></table></figure>
-<ul>
-<li><p>插入SD卡，用df命令查看当前已挂载的卷</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ df -h</div><div class="line">Filesystem       Size   Used  Avail Capacity iused      ifree %iused  Mounted on</div><div class="line">/dev/disk1      930Gi   60Gi  870Gi     7% 1263919 4293703360    0%   /</div><div class="line">devfs           185Ki  185Ki    0Bi   100%     639          0  100%   /dev</div><div class="line">map -hosts        0Bi    0Bi    0Bi   100%       0          0  100%   /net</div><div class="line">map auto_home     0Bi    0Bi    0Bi   100%       0          0  100%   /home</div><div class="line">/dev/disk2s1     15Gi  3.3Mi   15Gi     1%       0          0  100%   /Volumes/RASPBERRY</div></pre></td></tr></table></figure>
-</li>
-<li><p>对比Size 和 Mounted on 列，找到U盘，我这里是  /dev/disk2s1 </p>
-</li>
-<li><p>卸载分区</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ diskutil unmount /dev/disk2s1</div><div class="line">Volume RASPBERRY on disk2s1 unmounted</div></pre></td></tr></table></figure>
-</li>
-<li><p>确认磁盘</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">$ diskutil list</div><div class="line">/dev/disk0 (internal, physical):</div><div class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</div><div class="line">   0:      GUID_partition_scheme                        *1.0 TB     disk0</div><div class="line">   1:                        EFI EFI                     209.7 MB   disk0s1</div><div class="line">   2:          Apple_CoreStorage Macintosh HD            999.3 GB   disk0s2</div><div class="line">   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3</div><div class="line"></div><div class="line">/dev/disk1 (internal, virtual):</div><div class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</div><div class="line">   0:                            Macintosh HD           +999.0 GB   disk1</div><div class="line">                                 Logical Volume on disk0s2</div><div class="line">                                 06B268FB-F929-4E56-8E39-FC71ECC36FCC</div><div class="line">                                 Unencrypted</div><div class="line"></div><div class="line">/dev/disk2 (external, physical):</div><div class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</div><div class="line">   0:     FDisk_partition_scheme                        *15.9 GB    disk2</div><div class="line">   1:             Windows_FAT_32 RASPBERRY               15.9 GB    disk2s1</div></pre></td></tr></table></figure>
-</li>
-<li><p>镜像写入（一定要确认再确认disk后面的数字）<br><em>说明：/dev/disk2s1是分区，/dev/disk2是块设备，/dev/rdisk2是原始字符设备</em></p>
+<h6 id="插入SD卡，用df命令查看当前已挂载的卷"><a href="#插入SD卡，用df命令查看当前已挂载的卷" class="headerlink" title="插入SD卡，用df命令查看当前已挂载的卷"></a>插入SD卡，用<code>df</code>命令查看当前已挂载的卷</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ df -h</div><div class="line">Filesystem       Size   Used  Avail Capacity iused      ifree %iused  Mounted on</div><div class="line">/dev/disk1      930Gi   60Gi  870Gi     7% 1263919 4293703360    0%   /</div><div class="line">devfs           185Ki  185Ki    0Bi   100%     639          0  100%   /dev</div><div class="line">map -hosts        0Bi    0Bi    0Bi   100%       0          0  100%   /net</div><div class="line">map auto_home     0Bi    0Bi    0Bi   100%       0          0  100%   /home</div><div class="line">/dev/disk2s1     15Gi  3.3Mi   15Gi     1%       0          0  100%   /Volumes/RASPBERRY</div></pre></td></tr></table></figure>
+<blockquote>
+<p>对比Size 和 Mounted on 列，找到U盘，我这里是   <code>/dev/disk2s1</code></p>
+</blockquote>
+<h6 id="卸载分区"><a href="#卸载分区" class="headerlink" title="卸载分区"></a>卸载分区</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ diskutil unmount /dev/disk2s1</div><div class="line">Volume RASPBERRY on disk2s1 unmounted</div></pre></td></tr></table></figure>
+<h6 id="确认磁盘"><a href="#确认磁盘" class="headerlink" title="确认磁盘"></a>确认磁盘</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">$ diskutil list</div><div class="line">/dev/disk0 (internal, physical):</div><div class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</div><div class="line">   0:      GUID_partition_scheme                        *1.0 TB     disk0</div><div class="line">   1:                        EFI EFI                     209.7 MB   disk0s1</div><div class="line">   2:          Apple_CoreStorage Macintosh HD            999.3 GB   disk0s2</div><div class="line">   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3</div><div class="line"></div><div class="line">/dev/disk1 (internal, virtual):</div><div class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</div><div class="line">   0:                            Macintosh HD           +999.0 GB   disk1</div><div class="line">                                 Logical Volume on disk0s2</div><div class="line">                                 06B268FB-F929-4E56-8E39-FC71ECC36FCC</div><div class="line">                                 Unencrypted</div><div class="line"></div><div class="line">/dev/disk2 (external, physical):</div><div class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</div><div class="line">   0:     FDisk_partition_scheme                        *15.9 GB    disk2</div><div class="line">   1:             Windows_FAT_32 RASPBERRY               15.9 GB    disk2s1</div></pre></td></tr></table></figure>
+<h6 id="镜像写入（一定要确认再确认disk后面的数字）"><a href="#镜像写入（一定要确认再确认disk后面的数字）" class="headerlink" title="镜像写入（一定要确认再确认disk后面的数字）"></a>镜像写入（一定要确认再确认disk后面的数字）</h6><blockquote>
+<p><em>说明：<code>/dev/disk2s1</code>是分区，<code>/dev/disk2</code>是块设备，<code>/dev/rdisk2</code>是原始字符设备</em></p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo dd bs=4m if=2016-11-25-raspbian-jessie-lite.img of=/dev/rdisk2</div></pre></td></tr></table></figure>
-</li>
-</ul>
+<blockquote>
 <p>一只羊，两只羊，四只羊，八只羊，十六只羊……………..</p>
 <p>出现下面的提示，说明SD卡刷好了</p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">31+1 records in</div><div class="line">331+1 records out</div><div class="line">1390411776 bytes transferred in 114.280768 secs (12166630 bytes/sec)</div></pre></td></tr></table></figure>
-<ul>
-<li>卸载设备<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ diskutil unmountDisk /dev/disk2</div><div class="line">Unmount of all volumes on disk2 was successful</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><em>**</em>现在就可以拔下SD卡，插到树莓派上启动系统了。</p>
-<h4 id="Window"><a href="#Window" class="headerlink" title="Window"></a>Window</h4><p>自行搜索教程（盗图）</p>
+<h6 id="卸载设备"><a href="#卸载设备" class="headerlink" title="卸载设备"></a>卸载设备</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ diskutil unmountDisk /dev/disk2</div><div class="line">Unmount of all volumes on disk2 was successful</div></pre></td></tr></table></figure>
+<blockquote>
+<p>现在就可以拔下SD卡，插到树莓派上启动系统了。</p>
+</blockquote>
+<h4 id="Window"><a href="#Window" class="headerlink" title="Window"></a>Window</h4><blockquote>
+<p>自行搜索教程（盗图）</p>
+</blockquote>
 <p><img src="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/win32diskimager.jpg" alt=""></p>
-<h1 id="运行系统"><a href="#运行系统" class="headerlink" title="运行系统"></a>运行系统</h1><h3 id="配置选项"><a href="#配置选项" class="headerlink" title="配置选项"></a>配置选项</h3><p>首次安装系统，默认不开启SSH，所以首次运行还需要连接一台HDMI接口显示器，进行配置。</p>
+<h1 id="运行系统"><a href="#运行系统" class="headerlink" title="运行系统"></a>运行系统</h1><blockquote>
+<p>首次安装系统，默认不开启SSH，所以首次运行还需要连接一台HDMI接口显示器，进行配置。</p>
+</blockquote>
 <ul>
 <li>系统默认用户 pi</li>
 <li>系统默认密码 raspberry</li>
 </ul>
-<p>运行配置命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo raspi-config</div></pre></td></tr></table></figure>
-<p><img src="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/raspi-config.png" alt="raspi-config"></p>
-<ul>
-<li>选择 8 Advanced Options</li>
-<li>选择 SSH，开启</li>
-</ul>
+<h6 id="运行配置命令"><a href="#运行配置命令" class="headerlink" title="运行配置命令"></a>运行配置命令</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo raspi-config</div></pre></td></tr></table></figure>
+<blockquote>
+<p>选择 7 Advanced Options</p>
+</blockquote>
+<p><img src="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/raspi-config-1.png" alt="raspi-config"></p>
+<blockquote>
+<p>选择 A4 SSH, 开启选项</p>
+</blockquote>
+<p><img src="http://oikw1ykjt.bkt.clouddn.com/2016-12/24/raspi-config-2.png" alt="raspi-config"></p>
 
       
 
@@ -272,6 +273,15 @@ GPU 带宽 1Gpixel/s, 1.5Gtexel/s or 24GFLOPs DMA 纹理解析
 
   
 <nav id="article-nav">
+  
+    <a href="/2016-12/24/infraed-receiving-module-hx1888/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          树莓派连接红外接收模块
+        
+      </div>
+    </a>
   
   
     <a href="/2016-12/22/raspberry-pi-pins-version-40/" id="article-nav-older" class="article-nav-link-wrap">
@@ -344,15 +354,15 @@ GPU 带宽 1Gpixel/s, 1.5Gtexel/s or 24GFLOPs DMA 纹理解析
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)">smartHome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">树莓派</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)">针脚</a>
+                <a href="javascript:void(0)">apt-get</a>
               </li>
             
             <div class="clearfix"></div>
